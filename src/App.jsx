@@ -78,6 +78,11 @@ function App() {
     return `${minutes}:${secs.toString().padStart(2, "0")}`;
   };
 
+  const handleOptionClick = (id) => {
+    set_selected_ID(id);
+    resetTimer();
+  }
+
   return (
     <div className="container">
       <main>
@@ -96,7 +101,7 @@ function App() {
                   ? "notselected"
                   : "")
               }
-              onClick={() => set_selected_ID(option.id)}
+              onClick={() => handleOptionClick(option.id)}
             >
               {option.title}
             </button>
