@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Roboto:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+}
+
+:root {
+  --bg_color: #fbf8ee;
+  --brown_accent: #6f5d4f;
+  --button_outline: #ffd963;
+  --button_fill: #fffcec;
+  --button_fill_hover: #fff3c2;
+}
+
+.container {
+  background-color: var(--bg_color);
+  width: 100dvw;
+}
+
+main {
+  margin: 0 auto;
+  min-height: 100dvh;
+  padding: 120px;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  font-family: "helvetica", serif;
+}
+
+body {
+  background-color: var(--brown_accent);
+}
+
+h1 {
+  color: var(--brown_accent);
+  font-size: 50px;
+}
+
+.options_container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.option {
+  color: var(--brown_accent);
+  background-color: var(--button_fill);
+  border: 8px solid var(--button_outline);
+  padding: 2px 10px;
+  text-align: center;
+  width: 250px;
+  font-size: 22px;
+  display: block;
+  transition: 0.25s ease-out;
+  box-shadow: -4px 6px 2px rgba(0, 0, 0, 0.3);
+}
+
+.option:hover {
+  background-color: var(--button_fill_hover);
+  scale: 1.05;
+  border-color: var(--button_outline);
+  box-shadow: -5px 7px 4px rgba(0, 0, 0, 0.3);
+}
+
+.option:focus {
+  outline: none;
+}
+
+.selected {
+  scale: 1.05;
+  box-shadow: -5px 7px 4px rgba(0, 0, 0, 0.3);
+}
+
+.notselected {
+  opacity: 0.5;
+  scale: 0.95;
+}
+
+.timer_egg_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.egg_image {
+  height: 220px;
+  display: block;
+  border: 10px solid var(--brown_accent);
+}
+
+.timer_container {
+  width: max-content;
+}
+
+.timer {
+  text-align: center;
+  font-size: 130px;
+  color: var(--brown_accent);
+  width: 600px;
+  transition: 0.5s;
+  opacity: 0.7;
+}
+
+.runningTimer {
+  scale: 1.2;
+  opacity: 1;
+}
+
+hr {
+  position: relative;
+  bottom: 20px;
+  border-color: var(--brown_accent);
+}
+
+.controls_container {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.control_icon {
+  height: 60px;
+  border: 3px solid var(--brown_accent);
+  border-radius: 15px;
+  padding: 5px;
+  display: block;
+  margin: 0 auto;
+  transition: 0.05s;
+}
+
+.control_btn {
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0;
+  border: none;
+  outline: none;
+  display: block;
+  margin: 0 auto;
+  transition: 0.07s;
+}
+
+.control_btn:hover {
+  scale: 1.03;
+}
+
+.control_btn:active {
+  scale: 0.98;
+}
+
+.control_btn:focus {
+  outline: none;
+}
+
+.running {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 1500px) {
+  main {
+    padding: 0 100px;
+    padding-top: 120px;
+  }
+  .options_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .option {
+    margin: 0 auto;
+    width: 70%;
+    min-width: 250px;
+  }
+  hr {
+    width: 500px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1245px) {
+  .timer_egg_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 300px;
+    gap: 40px;
+  }
+  .timer_egg_container > * {
+    margin: 0 auto;
+  }
+
+  .timer {
+    font-size: 100px;
+    width: 100%;
+  }
+  .egg_image {
+    height: 170px;
+  }
+  hr {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    padding-top: 60px;
+  }
+  .options_container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .option {
+    width: 70%;
+    min-width: 250px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 500px;
+  }
+
+  main {
+    padding: 0 10px;
+    padding-top: 20px;
+  }
+
+  .timer_egg_container {
+    gap: 30px;
+  }
+}
