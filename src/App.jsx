@@ -111,7 +111,7 @@ function App() {
         {/* Timer and icons, Desktop*/}
         <div className="timer_egg_container">
           <img
-            src="src/assets/egg_thumbs_up.gif"
+            src="/assets/egg_thumbs_up.gif"
             alt="Egg thumbs up"
             className="egg_image"
           />
@@ -126,14 +126,14 @@ function App() {
             <div className="controls_container">
               <button className="control_btn" onClick={resetTimer}>
                 <img
-                  src="src/assets/icon_rewind.png"
+                  src="/assets/icon_rewind.png"
                   alt="Reset Icon"
                   className="control_icon"
                 />
               </button>
               <button className="control_btn" onClick={startTimer}>
                 <img
-                  src="src/assets/icon_start.png"
+                  src="/assets/icon_start.png"
                   alt="Start Icon"
                   className={
                     isRunning ? "control_icon running" : "control_icon"
@@ -144,7 +144,7 @@ function App() {
           </div>
 
           <img
-            src="src/assets/egg_jump.gif"
+            src="/assets/egg_jump.gif"
             alt="Egg jumping"
             className="egg_image"
           />
