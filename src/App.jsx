@@ -39,16 +39,14 @@ function App() {
   useEffect(() => {
     let timer;
     if (isRunning && timeLeft > 0) {
-      // Start the timer when it's running and timeLeft is greater than 0
       timer = setInterval(() => {
         setTimeLeft((prev) => prev - 1);
       }, 1000);
     } else if (timeLeft === 0) {
-      // Stop the timer when timeLeft reaches 0
       setIsRunning(false);
     }
 
-    return () => clearInterval(timer); // Cleanup the interval
+    return () => clearInterval(timer);
   }, [isRunning, timeLeft]);
 
   const startTimer = () => {
@@ -56,10 +54,9 @@ function App() {
       const selectedOption = options.find((opt) => opt.id === selected_ID);
       if (selectedOption) {
         if (timeLeft === 0) {
-          // Reset timer if it reached 0
           setTimeLeft(selectedOption.duration_mins * 60);
         }
-        setIsRunning(true); // Start the timer
+        setIsRunning(true);
       }
     }
   };
@@ -67,9 +64,9 @@ function App() {
   const resetTimer = () => {
     const selectedOption = options.find((opt) => opt.id === selected_ID);
     if (selectedOption) {
-      setTimeLeft(selectedOption.duration_mins * 60); // Reset to selected duration
+      setTimeLeft(selectedOption.duration_mins * 60);
     }
-    setIsRunning(false); // Stop the timer
+    setIsRunning(false);
   };
 
   const formatTime = (seconds) => {
