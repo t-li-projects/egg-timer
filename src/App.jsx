@@ -128,7 +128,9 @@ function App() {
                 <img
                   src="assets/icon_rewind.png"
                   alt="Reset Icon"
-                  className="control_icon"
+                  className={
+                    isRunning ? "control_icon " : "control_icon running"
+                  }
                 />
               </button>
               <button className="control_btn" onClick={startTimer}>
